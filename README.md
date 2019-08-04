@@ -1,4 +1,4 @@
 # Classification-single-hidden-layer-basis
 Automatic feature design for classification
 
-$\sum_{i=0}^N{X_i}$
+ax^{2} + by^{2} + c = 0
