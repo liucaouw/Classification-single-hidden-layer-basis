@@ -10,7 +10,7 @@ Where the derivatives are easily calculated using the chain rule. The derivative
 
 $$\frac{\partial}{\partial b}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )y_{p}$$
 
-proof:$\because g\left ( \mathbf{w} \right )=\sum_{p=1}^{P}log\left ( 1+e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )} \right )$
+proof:$$\because g\left ( \mathbf{w} \right )=\sum_{p=1}^{P}log\left ( 1+e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )} \right )$$
 
 $$\frac{\partial}{\partial w_{n}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )y_{p}$$
 
