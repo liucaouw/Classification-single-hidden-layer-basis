@@ -11,7 +11,16 @@ Where the derivatives are easily calculated using the chain rule. The derivative
 $$\frac{\partial}{\partial b}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )y_{p}$$
 
 proof: The cost function $ g\left ( \mathbf{w} \right )=\sum_{p=1}^{P}log\left ( 1+e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )} \right )$
-where
+
+where $$ \mathbf{f_{p}}=\begin{bmatrix}
+a\left ( c_{1}+\mathbf{x_{p}^{T}}\mathbf{v_{1}} \right )& a\left ( c_{2}+\mathbf{x_{p}^{T}}\mathbf{v_{2}} \right ) & ... & a\left ( c_{M}+\mathbf{x_{p}^{T}}\mathbf{v_{M}} \right )
+\end{bmatrix}^{T}$$
+
+$$ \mathbf{w}=\begin{bmatrix}
+w_{1} & w_{2} & ... & w_{M}
+\end{bmatrix}$$
+
+b=w_{0}
 
 $$\frac{\partial}{\partial w_{n}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )y_{p}$$
 
