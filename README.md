@@ -16,4 +16,4 @@ $$\frac{\partial}{\partial c_{n}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( 
 
 $$\nabla _{\mathbf{v_{n}}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a'\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )\mathbf{x_{p}}w_{n}y_{p}$$ 
 
-$$\nabla_{v} g$$
+$$\nabla_{\mathbf{v_{n}}} g$$
