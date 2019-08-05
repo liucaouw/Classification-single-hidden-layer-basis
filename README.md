@@ -100,9 +100,7 @@ $$=-\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{
 
 $$ =-\begin{bmatrix}
 1 &1  &...  &1 
-\end{bmatrix}_{1\times P}\cdot \begin{bmatrix}
-\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}v_{m}} \right ) \right ) \right )\cdot y_{1} &...  &\sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right ) \right ) \right )\cdot y_{P} 
-\end{bmatrix}^{T}$$
+\end{bmatrix}_{1\times P}$$
 
 $$ =\frac{\partial}{\partial b}g=-\mathbf{1_{P\times 1}^{T} q}\odot \mathbf{y}$$
 
