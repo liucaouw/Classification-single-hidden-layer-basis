@@ -72,21 +72,19 @@ $$\mathbf{q}=\begin{bmatrix}
 \sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}v_{m}} \right ) \right ) \right )\\ \sigma \left ( -y_{2}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{2}^{T}v_{m}} \right ) \right ) \right )
 \\ ...
 \\ \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right ) \right ) \right )
-
 \end{bmatrix}$$
 
 $$\mathbf{t_{n}}=\begin{bmatrix}
 tanh\left ( c_{n}+\mathbf{x_{1}^{T}v_{n}} \right )\\ tanh\left ( c_{n}+\mathbf{x_{2}^{T}v_{n}} \right )
 \\ ...
 \\ tanh\left ( c_{n}+\mathbf{x_{P}^{T}v_{n}} \right )
-
 \end{bmatrix}$$
 
 $$\mathbf{s_{n}}=\begin{bmatrix}
 sech^{2}\left ( c_{n}+\mathbf{x_{1}^{T}v_{n}} \right )\\ sech^{2}\left ( c_{n}+\mathbf{x_{2}^{T}v_{n}} \right )
 \\ ...
 \\ sech^{2}\left ( c_{n}+\mathbf{x_{P}^{T}v_{n}} \right )
+\end{bmatrix}$$ 
 
-\end{bmatrix}$$ and $$\mathbf{y}=\begin{bmatrix}
-y_{1} &y_{2}  & ... & y_{P}
-\end{bmatrix}^{T}$$
+
+$$\mathbf{y}=\begin{bmatrix} y_{1} &y_{2}  & ... & y_{P}\end{bmatrix}^{T}$$
