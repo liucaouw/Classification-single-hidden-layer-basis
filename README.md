@@ -104,4 +104,4 @@ $$ =-\begin{bmatrix}
 
 $$ =\frac{\partial}{\partial b}g=-\mathbf{1_{P\times 1}^{T} q}\odot \mathbf{y}$$
 
-where $tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{P}^{T}v_{m}}\right )$.
+where $tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{P}^{T}v_{m}}\right )$. 
