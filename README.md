@@ -51,3 +51,14 @@ $$ \nabla_{\mathbf{v_{n}}}g=\sum_{p=1}^{P}\frac{e^{-y_{p}\left ( b+\mathbf{f_{p}
 $$=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a'\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )\mathbf{x_{p}}w_{n}y_{p}$$
 
 This gradient can be written more efficiently for Python that have especially good implementations of matrix/vector operations by writing it more compactly. Supposing that $ a=tanh\left ( \cdot  \right ) $ is the activation function (meaning $ a'=sech^{2}\left ( \cdot  \right ) $ is the hyperbolic secant function squared), the derivatives from above may be written more compactly as
+
+$$ \frac{\partial}{\partial b}g=-\mathbf{1_{P\times 1}^{T} q}\odot \mathbf{y}$$
+
+$$ \frac{\partial}{\partial w_{n}}g=-\mathbf{1_{P\times 1}^{T}}\left ( \mathbf{q}\odot \mathbf{t_{n}}\odot \mathbf{y} \right )$$
+
+$$ \frac{\partial}{\partial c_{n}}g=-\mathbf{1_{P\times 1}^{T}}\left ( \mathbf{q}\odot \mathbf{s_{n}}\odot \mathbf{y} \right )w_{n}$$
+
+$$ \nabla_{\mathbf{v_{n}}}g=-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot \mathbf{y}w_{n}$$
+
+
+where $\bigodot $ denotes the component-wise product and denoting $ q_{p}=\sigma \left ( -y_{p}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{p}^{T}v_{m}}\right ) \right ) \right ) $, $ t_{np}=tanh\left ( c_{n}+\mathbf{x_{p}^{T}v_{n}} \right )$, $ s_{np}=sech^{2}\left ( c_{n}+\mathbf{x_{p}^{T}v_{n}} \right )$, and $ \mathbf{q}$,$ \mathbf{t_{n}}$, and $ \mathbf{s_{n}}$ the P length vectors containing these entries.
