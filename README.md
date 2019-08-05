@@ -69,9 +69,12 @@ where $\bigodot $ denotes the component-wise product and denoting $ q_{p}=\sigma
 Due to
 
 $$\mathbf{q}=\begin{bmatrix}
-\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}v_{m}} \right ) \right ) \right )\\ \sigma \left ( -y_{2}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{2}^{T}v_{m}} \right ) \right ) \right )
-\\ ...
-\\ \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right ) \right ) \right )
+\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}v_{m}} \right ) \right ) \right )\\ 
+\sigma \left ( -y_{2}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{2}^{T}v_{m}} \right ) \right ) \right )
+\\ 
+...
+\\ 
+\sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right ) \right ) \right )
 \end{bmatrix}$$
 
 $$\mathbf{t_{n}}=\begin{bmatrix}
