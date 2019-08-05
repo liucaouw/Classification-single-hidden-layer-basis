@@ -75,19 +75,32 @@ $$\mathbf{q}=\begin{bmatrix}
 ...
 \\ 
 \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right ) \right ) \right )
-\end{bmatrix}_{T}$$
+\end{bmatrix}^{T}$$
 
 $$\mathbf{t_{n}}=\begin{bmatrix}
 tanh\left ( c_{n}+\mathbf{x_{1}^{T}v_{n}} \right )\\ tanh\left ( c_{n}+\mathbf{x_{2}^{T}v_{n}} \right )
 \\ ...
 \\ tanh\left ( c_{n}+\mathbf{x_{P}^{T}v_{n}} \right )
-\end{bmatrix}_{T}$$
+\end{bmatrix}^{T}$$
 
 $$\mathbf{s_{n}}=\begin{bmatrix}
 sech^{2}\left ( c_{n}+\mathbf{x_{1}^{T}v_{n}} \right )\\ sech^{2}\left ( c_{n}+\mathbf{x_{2}^{T}v_{n}} \right )
 \\ ...
 \\ sech^{2}\left ( c_{n}+\mathbf{x_{P}^{T}v_{n}} \right )
-\end{bmatrix}_{T}$$ 
+\end{bmatrix}^{T}$$ 
 
 
 $$\mathbf{y}=\begin{bmatrix} y_{1} &y_{2}  & ... & y_{P}\end{bmatrix}^{T}$$
+
+Thus,
+
+$$ \frac{\partial}{\partial b}g=\sum_{p=1}^{P}\frac{e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )}}{1+e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )}}\cdot \left (-y_{p}  \right )$$
+$$=-\begin{bmatrix}
+1 &1  &...  &1 
+\end{bmatrix}_{1\times P}\cdot \begin{bmatrix}
+\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}}\mathbf{v_{m}} \right ) \right ) \right ).y_{1} &  ...& \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}}\mathbf{v_{m}} \right ) \right ) \right ).y_{P}
+\end{bmatrix}^{T}$$ 
+$$ =\frac{\partial}{\partial b}g=-\mathbf{1_{P\times 1}^{T} q}\odot \mathbf{y}$$
+
+where $tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{P}^{T}v_{m}}\right )$.
+
