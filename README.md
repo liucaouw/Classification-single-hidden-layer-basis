@@ -113,7 +113,7 @@ $$ \frac{\partial}{\partial w_{n}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left (
 
 $$ =  - \begin{bmatrix} 1 &1  &...  &1 \end{bmatrix}_{1 \times P}$$
 
-$$ \begin{bmatrix}
+$$ \cdot \begin{bmatrix}
 \sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot tanh\left ( c_{n}+\mathbf{x_{1}^{T}}\mathbf{v_{n}} \right ) \right ) \right )\cdot y_{1} &...  & \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot tanh\left ( c_{n}+\mathbf{x_{P}^{T}}\mathbf{v_{n}} \right ) \right ) \right )\cdot y_{P}
 \end{bmatrix}^{T}$$
 
