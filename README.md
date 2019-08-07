@@ -90,7 +90,7 @@ sech^{2}\left ( c_{n}+\mathbf{x_{1}^{T}v_{n}} \right )\\ sech^{2}\left ( c_{n}+\
 \end{bmatrix}^{T}$$ 
 
 
-$$\mathbf{y}=\begin{bmatrix} y_{1} &y_{2}  & ... & y_{P}\end{bmatrix}^{T}$$,
+$$\mathbf{y}=\begin{bmatrix} y_{1} &y_{2}  & ... & y_{P}\end{bmatrix}^{T}$$
 
 Thus,
 
@@ -148,7 +148,6 @@ $$ \cdot \begin{bmatrix}
 $$ =-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y}\cdot w_{n}$$
 
 Based on the derivatives above, the corresponding code (using gradient descent) in Python is as follows,
-
 
 ```Python
 	b = 0
