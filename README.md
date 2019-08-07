@@ -104,7 +104,7 @@ $$\cdot \begin{bmatrix}
 
 $$ =-\mathbf{1_{P\times 1}^{T} q}\odot \mathbf{y}$$
 
-where $tanh\left ( c_{m}+\mathbf{x_{P}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{P}^{T}v_{m}}\right )$. 
+where $tanh\left ( c_{m}+\mathbf{x_{p}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{p}^{T}v_{m}}\right )$. 
 
 
 Thus,
@@ -146,3 +146,39 @@ $$ \cdot \begin{bmatrix}
 \end{bmatrix}^{T}$$
 
 $$ =-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y}\cdot w_{n}$$
+
+Based on the derivatives above, the corresponding code (using gradient descent) in Python is as follows,
+
+''' python
+	b = 0
+	w = np.random.rand(M, 1)
+	c = np.zeros((M, 1))
+	V = np.random.rand(M, 2)
+	P = np.size(y)
+	alpha = 1e-2
+	l_P = np.ones((P, 1))
+	max_its = 10000
+	k = 1
+    
+	for k in range(max_its):
+		q = np.zeros((P,1))
+		for p in np.arange(0,P):
+			x = X[p].reshape(1,np.size(X[p]))
+			q[p] = sigmoid(-y[p] * (b + np.dot(w.T, np.tanh(c + np.dot(V, x.T)))))
+		grad_b = -1 * np.dot(l_P.T, q * y)
+		grad_w = np.zeros((M, 1))
+		grad_c = np.zeros((M, 1))
+		grad_V = np.zeros((M, 2))
+		for n in np.arange(0, M):
+			v = V[n].reshape(2,1)
+			t = np.tanh(c[n] +np.dot(X,v))
+			s = 1 / np.cosh(c[n]+np.dot(X,v))**2
+			grad_w[n] = -1 * np.dot(l_P.T,q * t * y)
+			grad_c[n] = -1 * np.dot(l_P.T,q * s * y) * w[n]
+			grad_V[n] = (-1 * np.dot(X.T, q * s * y) * w[n]).reshape(2,)          
+		b = b - alpha * grad_b
+		w = w - alpha * grad_w
+		c = c - alpha * grad_c
+		V = V - alpha * grad_V
+		k = k + 1
+    '''
