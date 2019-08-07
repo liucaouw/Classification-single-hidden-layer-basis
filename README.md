@@ -50,6 +50,7 @@ Thus,
 $$ \nabla_{\mathbf{v_{n}}}g=\sum_{p=1}^{P}\frac{e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )}}{1+e^{-y_{p}\left ( b+\mathbf{f_{p}^{T}}\mathbf{w} \right )}}\cdot \left (-y_{p}  \right )\cdot w_{n}\cdot a'\left ( c_{n}+ \mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )\cdot \mathbf{x_{p}}$$
 $$=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a'\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )\mathbf{x_{p}}w_{n}y_{p}$$
 
+End.
 
 This gradient can be written more efficiently for Python that have especially good implementations of matrix/vector operations by writing it more compactly. Supposing that $ a=tanh\left ( \cdot  \right ) $ is the activation function (meaning $ a'=sech^{2}\left ( \cdot  \right ) $ is the hyperbolic secant function squared), the derivatives from above may be written more compactly as
 
@@ -146,6 +147,8 @@ $$ \cdot \begin{bmatrix}
 \end{bmatrix}^{T}$$
 
 $$ =-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y}\cdot w_{n}$$
+
+End.
 
 Based on the derivatives above, the corresponding code (using gradient descent) in Python is as follows,
 
