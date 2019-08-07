@@ -149,7 +149,8 @@ $$ =-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y}\cdot w_{n}$$
 
 Based on the derivatives above, the corresponding code (using gradient descent) in Python is as follows,
 
-''' python
+'''
+
 	b = 0
 	w = np.random.rand(M, 1)
 	c = np.zeros((M, 1))
