@@ -131,4 +131,18 @@ $$ \cdot \begin{bmatrix}
 \sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot sech^{2}\left ( c_{n}+\mathbf{x_{1}^{T}}\mathbf{v_{n}} \right )\cdot w_{n}\cdot y_{1} &...  & \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot sech^{2}\left ( c_{n}+\mathbf{x_{P}^{T}}\mathbf{v_{n}} \right ) \cdot w_{n}\cdot y_{P}
 \end{bmatrix}^{T}$$
 
+$$ =-\mathbf{1_{P\times 1}^{T}}\left ( \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y} \right )\cdot w_{n}$$
+
 where $sech^{2}\left ( c_{n}+\mathbf{x_{p}^{T}v_{n}} \right )=a'\left (  c_{n}+\mathbf{x_{p}^{T}v_{n}}\right )$ and $tanh\left ( c_{m}+\mathbf{x_{p}^{T}v_{m}} \right )=a\left (  c_{m}+\mathbf{x_{p}^{T}v_{m}}\right )$. 
+
+Thus,
+
+$$\nabla_{\mathbf{v_{n}}}g=-\sum_{p=1}^{P}\sigma \left ( -y_{p} \left ( b+\sum_{m=1}^{M}w_{m}a\left ( c_{m}+\mathbf{x_{p}^{T}}\mathbf{v_{m}}\right ) \right )\right )a'\left ( c_{n}+\mathbf{x_{p}^{T}}\mathbf{v_{n}}\right )\mathbf{x_{p}}w_{n}y_{p}$$ 
+
+$$ =  - \begin{bmatrix} x_{1} &x_{2}  &...  &x_{P} \end{bmatrix}_{2 \times P}$$
+
+$$ \cdot \begin{bmatrix}
+\sigma \left ( -y_{1}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{1}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot sech^{2}\left ( c_{n}+\mathbf{x_{1}^{T}}\mathbf{v_{n}} \right )\cdot w_{n}\cdot y_{1} &...  & \sigma \left ( -y_{P}\left ( b+\sum_{m=1}^{M}w_{m}tanh\left ( c_{m}+\mathbf{x_{P}^{T}}\mathbf{v_{m}} \right ) \right ) \right )\cdot sech^{2}\left ( c_{n}+\mathbf{x_{P}^{T}}\mathbf{v_{n}} \right ) \cdot w_{n}\cdot y_{P}
+\end{bmatrix}^{T}$$
+
+$$ =-\mathbf{X}\cdot \mathbf{q}\odot \mathbf{s_{n}}\odot\mathbf{y}\cdot w_{n}$$
