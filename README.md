@@ -1,4 +1,6 @@
-# Classification using single hidden layer basis
+# Classifier using single hidden layer basis and k-nearest neighbors (k-NN) classifier
+
+## single hidden layer basis
 
 When employng M single hidden layer basis features (using any activation a(.)) the full gradient of a cost g (e.g., the softmax) is a vector of length Q=M(N+2)+1 containing the derivation of the cost with respect to each variable.
 
@@ -184,4 +186,30 @@ Based on the derivatives above, the corresponding code (using gradient descent) 
 		c = c - alpha * grad_c
 		V = V - alpha * grad_V
 		k = k + 1
+  ```
+
+## k-nearest neighbors (k-NN)
+
+The k-nearest neighbors (k-NN) is a local classification scheme, while differing from the more global feature basis approach, can produce non-linear boundaries in the original feature space.
+
+With the k-NN approach there is no training phase to the classification scheme. We simply use the training data directly to classify any new point $x_{new}$ by taking the average of the labels of its k-nearest neighbors. That is, we create the label $y_{new}$ for a point $x_{new}$ by simply calculating
+
+$$ y_{new}=sign\left ( \sum _{i\epsilon \Omega } y_{i}\right ),$$
+
+where \Omega is the set of indices of the k closest traning points to $x_{new}. To avoid tie votes (i.e., a value of zero above) typically the number of neighbors k is chosen to be odd. The corresponding code for k-NN in Python is as follows,
+
+```Python
+def knn(data, x, y, k):
+    sum = 0
+    m = np.zeros((len(data), 2))
+    for i in np.arange(len(data)):
+        m[i][0] = (x - data[i][0])**2 + (y - data[i][1])**2
+        m[i][1] = data[i][2]
+    m = m.tolist()
+    m.sort(key=lambda x: x[0])
+    m = np.asarray(m)
+    for i in range(0, k):
+        sum=sum+ m[i][1]
+    ynew = sign(sum)
+    return ynew
   ```
