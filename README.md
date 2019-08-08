@@ -194,7 +194,7 @@ The k-nearest neighbors (k-NN) is a local classification scheme, while differing
 
 With the k-NN approach there is no training phase to the classification scheme. We simply use the training data directly to classify any new point $x_{new}$ by taking the average of the labels of its k-nearest neighbors. That is, we create the label $y_{new}$ for a point $x_{new}$ by simply calculating
 
-$$ y_{new}=sign\left ( \sum _{i\epsilon \Omega } y_{i}\right )$$
+$$ y_{new}=sign\left ( \sum_{i\epsilon \Omega } y_{i} \right )$$
 
 where \Omega is the set of indices of the k closest traning points to $x_{new}. To avoid tie votes (i.e., a value of zero above) typically the number of neighbors k is chosen to be odd. The corresponding code for k-NN in Python is as follows,
 
