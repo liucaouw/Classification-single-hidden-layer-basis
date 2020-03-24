@@ -196,7 +196,7 @@ With the k-NN approach there is no training phase to the classification scheme. 
 
 $$ y_{new}=sign\left ( \sum_{i\epsilon \Omega } y_{i} \right )$$
 
-where \Omega is the set of indices of the k closest traning points to $x_{new}. To avoid tie votes (i.e., a value of zero above) typically the number of neighbors k is chosen to be odd. The corresponding code for k-NN in Python is as follows,
+where $\Omega$ is the set of indices of the k closest traning points to $x_{new}$. To avoid tie votes (i.e., a value of zero above) typically the number of neighbors k is chosen to be odd. The corresponding code for k-NN in Python is as follows,
 
 ```Python
 def knn(data, x, y, k):
